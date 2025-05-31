@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValkStudios</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(180deg, #000, #444);
+            color: #fff;
+        }
+        header {
+            text-align: center;
+            padding: 80px 20px 30px 20px;
+        }
+        header h1 {
+            font-size: 6em;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        nav a {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 10px;
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+        nav a:hover, nav a.active {
+            background: #fff;
+            color: #000;
+        }
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+            background: #111;
+            border-radius: 20px;
+            min-height: 400px;
+        }
+        h2 {
+            font-size: 2.8em;
+            border-left: 6px solid #fff;
+            padding-left: 14px;
+            margin-bottom: 20px;
+        }
+        p, li {
+            font-size: 1.4em;
+            line-height: 1.7em;
+        }
+        ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        ul li a:hover {
+            color: #ddd;
+        }
+        .section-block {
+            margin-bottom: 30px;
+        }
+        .contact-links a {
+            display: inline-block;
+            margin-right: 20px;
+            padding: 10px 16px;
+            background: #fff;
+            color: #000;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .contact-links a:hover {
+            background: #ddd;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9em;
+            color: #aaa;
+            background: #222;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>ValkStudios</h1>
+        <nav>
+            <a id="nav-about" onclick="showSection('about')">About</a>
+            <a id="nav-projects" onclick="showSection('projects')">Projects</a>
+            <a id="nav-leaks" onclick="showSection('leaks')">Game Leaks</a>
+            <a id="nav-team" onclick="showSection('team')">Our Team</a>
+        </nav>
+    </header>
+    <main>
+        <section id="about" class="content-section">
+            <h2>About ValkStudios</h2>
+            <p>We are ValkStudios — a passionate and creative group of Roblox developers focused on building fun, high-quality games. We may be simple devs, but we care deeply about delivering exciting, community-driven experiences.</p>
+            <div class="contact-links" style="margin-top:30px;">
+                <a href="https://x.com/ValkZinco" target="_blank">Twitter</a>
+                <a href="https://discord.gg/WPER7eFawn" target="_blank">Discord</a>
+                <a href="https://www.roblox.com/groups/34013931/ValkStudios#!/about" target="_blank">Roblox Group</a>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section" style="display:none;">
+            <h2>Projects</h2>
+            <div class="section-block">
+                <strong>Kimetsu Battlegrounds</strong>
+                <p>Status: In Progress — A fast-paced, exciting Roblox battler currently under active development. Stay tuned for updates!</p>
+            </div>
+        </section>
+
+        <section id="leaks" class="content-section" style="display:none;">
+            <h2>Game Leaks</h2>
+            <p>Exclusive previews of upcoming features, hidden mechanics, and future game updates. Check back often to catch insider leaks before they go live!</p>
+        </section>
+
+        <section id="team" class="content-section" style="display:none;">
+            <h2>Our Team</h2>
+            <ul>
+                <li><a href="https://www.roblox.com/users/5226278337/profile" target="_blank">Zinco</a></li>
+                <li><a href="https://www.roblox.com/users/5365794071/profile" target="_blank">Vortex</a></li>
+                <li><a href="https://www.roblox.com/users/4113319500/profile" target="_blank">Sunday</a></li>
+                <li><a href="https://www.roblox.com/users/4085044094/profile" target="_blank">Justa</a></li>
+                <li><a href="https://www.roblox.com/users/8478959266/profile" target="_blank">Nezuko</a></li>
+                <li><a href="https://www.roblox.com/users/197351/profile" target="_blank">Austin</a></li>
+                <li><a href="https://www.roblox.com/users/4079258396/profile" target="_blank">Elix</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 ValkStudios. All rights reserved.
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(sec => sec.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            document.getElementById('nav-' + sectionId).classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('about');
+        });
+    </script>
+    <link rel="icon" href="/valklogo.ico" type="image/x-icon">
+</body>
+</html>
+
